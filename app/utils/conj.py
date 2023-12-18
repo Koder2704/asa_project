@@ -16,7 +16,7 @@ def conjugate_in_tense(verb: str, tense: str):
         raise ValueError(f"''{verb}'' n'est pas du premier groupe !")
     else:
         # Nourrir le store des verbes...
-        if verb not in normal_list:
+        if verb not in normal_list or verb not in g_verbs:
             # Si c'est un verbe qui aura la terminaison 'eons' a la 1ere personne du pluriel,
             # ajouter dans la liste des 'g_verbs' pour pouvoir avoir le support de la bonne
             # terminaison lors de la conjugaison.
