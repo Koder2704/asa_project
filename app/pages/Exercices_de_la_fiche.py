@@ -254,6 +254,8 @@ la matrice transposée de A. On rappelle que : si A = (aij), alors transposée(A
             if matrix and size:
                 size = int(size)
                 matrix = np.matrix([list(map(int, ligne.split(','))) for ligne in matrix.split()])
+                
+                # Printing the formated matrix:
                 'Format de matrice:', matrix
 
                 with st.container(border=True):
