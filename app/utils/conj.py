@@ -42,12 +42,20 @@ def conjugate_in_tense(verb: str, tense: str):
             
             # Si c'est un verbe normal:
             elif verb in normal_list:
-                st.text(f"Je {verb[:-1]}")
-                st.text(f"Tu {verb[:-1] + 's'}")
-                st.text(f"Il/Elle {verb[:-1]}")
-                st.text(f"Nous {verb[:-1] + 'ons'}")
-                st.text(f"Vous {verb[:-2] + 'ez'}")
-                st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
+                if verb == 'envoyer':
+                    st.text(f"J' {verb[:-1]}")
+                    st.text(f"Tu {verb[:-1] + 's'}")
+                    st.text(f"Il/Elle {verb[:-1]}")
+                    st.text(f"Nous {verb[:-1] + 'ons'}")
+                    st.text(f"Vous {verb[:-2] + 'ez'}")
+                    st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
+                else:
+                    st.text(f"Je {verb[:-1]}")
+                    st.text(f"Tu {verb[:-1] + 's'}")
+                    st.text(f"Il/Elle {verb[:-1]}")
+                    st.text(f"Nous {verb[:-1] + 'ons'}")
+                    st.text(f"Vous {verb[:-2] + 'ez'}")
+                    st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
                 
         elif tense == 'fut':
              # Si le verbe est un irregulier:
