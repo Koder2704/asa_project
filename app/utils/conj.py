@@ -24,8 +24,9 @@ def conjugate_in_tense(verb: str, tense: str):
             if verb[-3] == 'g':
                 g_verbs.append(verb)
                 st.toast(f"Nouveau verbe: {verb} ajouté au dictionnaire avec incidence sur la terminaison !", icon='💙')
-            normal_list.append(verb)
-            st.toast(f"Nouveau verbe: {verb} ajouté au dictionnaire sans incidence sur la terminaison !", icon='💚')
+            else: 
+                normal_list.append(verb)
+                st.toast(f"Nouveau verbe: {verb} ajouté au dictionnaire sans incidence sur la terminaison !", icon='💚')
             print(normal_list)
             
         if tense == 'pre':
