@@ -35,7 +35,7 @@ with st.expander('Factoriel d\'un nombre', expanded=True) as main_wrapper:
                 n = int(n)
 
                 if n < 0:
-                    set_error("Entrez un nombre positif ! (n > 0)")
+                    set_error("Entrez un nombre supérieur à 0 !")
                 else:
                     with st.container(border=True):
                         with st.spinner("Evaluating results..."):

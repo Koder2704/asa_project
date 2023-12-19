@@ -1,6 +1,6 @@
 import streamlit as st
 
-normal_list = ['pisser', 'jouer', 'donner', 'chanter', 'parler', 'discuter', 'disputer',
+normal_list = ['jouer', 'donner', 'chanter', 'parler', 'discuter', 'disputer',
               'ordonner', 'annuler', 'crier', 'nouer', 'lier', 'envier']
 
 # Verbs with the sound 'g' which forms their present with 'geons' at the 1st person of plural:
@@ -32,7 +32,7 @@ def conjugate_in_tense(verb: str, tense: str):
         if tense == 'pre':
             
             # Si c'est un verbe en 'g' (geons):
-            if verb not in g_verbs:
+            if verb in g_verbs:
                 st.text(f"Je {verb[:-1]}")
                 st.text(f"Tu {verb[:-1] + 's'}")
                 st.text(f"Il/Elle {verb[:-1]}")
@@ -42,20 +42,13 @@ def conjugate_in_tense(verb: str, tense: str):
             
             # Si c'est un verbe normal:
             elif verb in normal_list:
-                if verb == 'envoyer':
-                    st.text(f"J' {verb[:-1]}")
-                    st.text(f"Tu {verb[:-1] + 's'}")
-                    st.text(f"Il/Elle {verb[:-1]}")
-                    st.text(f"Nous {verb[:-1] + 'ons'}")
-                    st.text(f"Vous {verb[:-2] + 'ez'}")
-                    st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
-                else:
-                    st.text(f"Je {verb[:-1]}")
-                    st.text(f"Tu {verb[:-1] + 's'}")
-                    st.text(f"Il/Elle {verb[:-1]}")
-                    st.text(f"Nous {verb[:-1] + 'ons'}")
-                    st.text(f"Vous {verb[:-2] + 'ez'}")
-                    st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
+                st.text(f"Je {verb[:-1]}")
+                st.text(f"Tu {verb[:-1] + 's'}")
+                st.text(f"Il/Elle {verb[:-1]}")
+                st.text(f"Nous {verb[:-1] + 'ons'}")
+                st.text(f"Vous {verb[:-2] + 'ez'}")
+                st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
+            
                 
         elif tense == 'fut':
              # Si le verbe est un irregulier:
