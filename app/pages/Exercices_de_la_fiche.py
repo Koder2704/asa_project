@@ -32,18 +32,20 @@ with st.expander('Factoriel d\'un nombre', expanded=True) as main_wrapper:
 
         if submitted:
             if n:
-                n = int(n)
+                try:
+                    n = int(n)
+                    if n < 0:
+                        set_error("Entrez un nombre supérieur à 0 !")
+                    else:
+                        with st.container(border=True):
+                            with st.spinner("Evaluating results..."):
+                                time.sleep(2)
+                                result = exercices.calculer_factoriel(n)
 
-                if n < 0:
-                    set_error("Entrez un nombre supérieur à 0 !")
-                else:
-                    with st.container(border=True):
-                        with st.spinner("Evaluating results..."):
-                            time.sleep(2)
-                            result = exercices.calculer_factoriel(n)
-
-                            st.subheader("Results")
-                            f"Le factoriel de {n} est:", result
+                                st.subheader("Results")
+                                f"Le factoriel de {n} est:", result
+                except ValueError:
+                    set_error("Seuls les nombres sont permis!")
             else:
                 set_error()
 
@@ -69,20 +71,23 @@ with st.expander('Nombre premier') as main_wrapper:
 
         if submitted:
             if n:
-                n = int(n)
+                try:
+                    n = int(n)
 
-                if n < 0:
-                    set_error("Entrez un nombre positif ! (n > 0)")
-                else:
-                    with st.container(border=True):
-                        with st.spinner("Evaluating results..."):
-                            time.sleep(2)
-                            result = exercices.est_premier(n)
+                    if n < 0:
+                        set_error("Entrez un nombre positif ! (n > 0)")
+                    else:
+                        with st.container(border=True):
+                            with st.spinner("Evaluating results..."):
+                                time.sleep(2)
+                                result = exercices.est_premier(n)
 
-                            if result:
-                                f"{n} est un nombre premier !"
-                            else:
-                                f'{n} n\'est pas un nombre premier !'
+                                if result:
+                                    f"{n} est un nombre premier !"
+                                else:
+                                    f'{n} n\'est pas un nombre premier !'
+                except ValueError:
+                    set_error("Seuls les nombres sont permis!")
             else:
                 set_error()
 
@@ -114,24 +119,27 @@ with st.expander('Nombres Copains') as main_wrapper:
 
         if submitted:
             if p and q:
-                p, q = int(p), int(q)
+                try:
+                    p, q = int(p), int(q)
 
-                if p <= 0 or q <= 0:
-                    set_error("Entrez un nombre positif ! (n > 0)")
-                else:
-                    with st.container(border=True):
-                        with st.spinner("Evaluating results..."):
-                            time.sleep(2)
-                            result = exercices.sont_copains(p, q)
+                    if p <= 0 or q <= 0:
+                        set_error("Entrez un nombre positif ! (n > 0)")
+                    else:
+                        with st.container(border=True):
+                            with st.spinner("Evaluating results..."):
+                                time.sleep(2)
+                                result = exercices.sont_copains(p, q)
 
-                            st.subheader("Results")
-                            f'Somme des diviseurs de {p}:', result['d_p']
-                            f'Somme des diviseurs de {q}:', result['d_q']
+                                st.subheader("Results")
+                                f'Somme des diviseurs de {p}:', result['d_p']
+                                f'Somme des diviseurs de {q}:', result['d_q']
 
-                            if not result['is']:
-                                'Les nombres ne sont pas copains !'
-                            else:
-                                'Les nombres sont copains !'
+                                if not result['is']:
+                                    'Les nombres ne sont pas copains !'
+                                else:
+                                    'Les nombres sont copains !'
+                except ValueError:
+                    set_error("Seuls les nombres sont permis!")
             else:
                 set_error()
 
