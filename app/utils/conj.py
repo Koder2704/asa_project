@@ -12,7 +12,7 @@ def conjugate_in_tense(verb: str, tense: str):
     
     print({verb, tense})
     
-    if not verb.endswith('er') or verb == 'aller':
+    if not verb.endswith('er') or verb == 'aller' or verb == 'boer':
         raise ValueError(f"''{verb}'' n'est pas du premier groupe !")
     else:
         # Nourrir le store des verbes...
