@@ -6,9 +6,9 @@ st.set_page_config(
     page_title="ASA", 
     page_icon="💻",
     menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
     }
 )
 
