@@ -38,7 +38,7 @@ def conjugate_in_tense(verb: str, tense: str):
                     st.text(f"Il/Elle {verb[:3] + 'oit'}")
                     st.text(f"Nous {verb[:3] + 'oyons'}")
                     st.text(f"Vous {verb[:3] + 'oyez'}")
-                    st.text(f"Ils/Elles {verb[:-3] + 'oyent'}")
+                    st.text(f"Ils/Elles {verb[:-3] + 'yent'}")
             
             else:
                 # Si c'est un verbe en 'g' (geons):
