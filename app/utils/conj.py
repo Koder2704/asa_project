@@ -33,12 +33,12 @@ def conjugate_in_tense(verb: str, tense: str):
             
             if verb in irregular_verbs:
                 if verb == 'envoyer':
-                    st.text(f"J\' {verb[:3] + 'errai'}")
-                    st.text(f"Tu {verb[:3] + 'erras'}")
-                    st.text(f"Il/Elle {verb[:3] + 'erra'}")
-                    st.text(f"Nous {verb[:3] + 'errons'}")
-                    st.text(f"Vous {verb[:3] + 'errez'}")
-                    st.text(f"Ils/Elles {verb[:-1] + 'erront'}")
+                    st.text(f"J\' {verb[:3] + 'oie'}")
+                    st.text(f"Tu {verb[:3] + 'oies'}")
+                    st.text(f"Il/Elle {verb[:3] + 'oit'}")
+                    st.text(f"Nous {verb[:3] + 'oyons'}")
+                    st.text(f"Vous {verb[:3] + 'oyez'}")
+                    st.text(f"Ils/Elles {verb[:-1] + 'oyent'}")
             
             else:
                 # Si c'est un verbe en 'g' (geons):
