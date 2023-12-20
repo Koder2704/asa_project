@@ -27,7 +27,7 @@ elif time.localtime().tm_hour >= 5:
 
 with st.container():
     st.header("Introduction")
-    st.success(''':orange[Bienvenue dans le projet ASA].(Algorithme et Structures de données avancés)
+    st.info(''':orange[Bienvenue dans le projet ASA].(Algorithme et Structures de données avancés)
     Ce projet a pour but de faire asseoir les connaissances des étudiants en cycles Licence
     sur les notions portées par le nom du projet.           
     ''')
