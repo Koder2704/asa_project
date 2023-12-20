@@ -45,7 +45,7 @@ def conjugate_in_tense(verb: str, tense: str):
                 st.text(f"Je {verb[:-1]}")
                 st.text(f"Tu {verb[:-1] + 's'}")
                 st.text(f"Il/Elle {verb[:-1]}")
-                st.text(f"Nous {verb[:-1] + 'ons'}")
+                st.text(f"Nous {verb[:-2] + 'ons'}")
                 st.text(f"Vous {verb[:-2] + 'ez'}")
                 st.text(f"Ils/Elles {verb[:-1] + 'ont'}")
             
