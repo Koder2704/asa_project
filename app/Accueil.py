@@ -4,12 +4,11 @@ import time
 
 st.set_page_config(
     page_title="ASA", 
-    page_icon="💻",
-    menu_items=None
+    page_icon="💻"
 )
+ 
 
-
-if time.localtime().tm_hour >= 12 and time.localtime().tm_hour < 16:
+if time.localtime().tm_hour >= 12 and time.localtime().tm_hour < 18:
     st.header("Bon après-midi !")
 elif time.localtime().tm_hour >= 18:
     st.header("Bonsoir !")
